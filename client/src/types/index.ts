@@ -1,10 +1,12 @@
-export enum Segmento {
-  TECNOLOGIA = 'TECNOLOGIA',
-  COMERCIO = 'COMERCIO',
-  INDUSTRIA = 'INDUSTRIA',
-  SERVICOS = 'SERVICOS',
-  AGRONEGOCIO = 'AGRONEGOCIO',
-}
+export const Segmento = {
+  TECNOLOGIA: 'TECNOLOGIA',
+  COMERCIO: 'COMERCIO',
+  INDUSTRIA: 'INDUSTRIA',
+  SERVICOS: 'SERVICOS',
+  AGRONEGOCIO: 'AGRONEGOCIO',
+} as const
+
+export type Segmento = (typeof Segmento)[keyof typeof Segmento]
 
 export interface Empreendimento {
   id: number
