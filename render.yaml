@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: empreende-sc
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run install:all && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: DATABASE_URL
+        value: file:./prisma/prod.db
